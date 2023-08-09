@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    background-image: url(./assets/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.dino{
+    background-image: url(./assets/tyrannosaurus-rex.png);
+    background-size: cover;
+    position: absolute;
+    bottom: 2em;
+    left: 2em;
+    width: 10em;
+    height: 10em;
+}
+
+.rock{
+    background-image: url(./assets/stone.png);
+    background-size: cover;
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    width: 10em;
+    height: 10em;
+}
