@@ -1,31 +1,75 @@
-*{
+* {
     box-sizing: border-box;
     outline: none;
 }
 
-body{
+body {
     background-image: url(./assets/background.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    overflow: hidden;
 }
 
-.dino{
+.dino {
     background-image: url(./assets/tyrannosaurus-rex.png);
-    background-size: cover;
-    position: absolute;
-    bottom: 2em;
     left: 2em;
-    width: 10em;
-    height: 10em;
 }
 
-.rock{
+.rock {
     background-image: url(./assets/stone.png);
+    right: 2em;
+}
+
+.rock,
+.dino {
     background-size: cover;
     position: absolute;
-    bottom: 2em;
-    right: 2em;
-    width: 10em;
-    height: 10em;
+    bottom: 5em;
+    width: 7em;
+    height: 7em;
+}
+
+.animateDino {
+    animation: dino 0.6s linear;
+}
+
+.animateRock {
+    animation: rock 3s linear infinite;
+}
+
+@keyframes dino {
+    0% {
+        bottom: 5em;
+    }
+    50% {
+        bottom: 15em;
+    }
+    100% {
+        bottom: 5em;
+    }
+}
+
+@keyframes rock {
+    0% {
+        left: 100vw;
+    }
+    100% {
+        left: -10vw;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .buttons {
+        width: 100%!important;
+        right: 0em!important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .dino,
+    .rock {
+        width: 5em;
+        height: 5em;
+    }
 }
