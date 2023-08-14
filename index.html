@@ -19,11 +19,13 @@
 </head>
 
 <body class="flex flex-col justify-start items-center gap-[1em] font-bold w-[100%] h-[100vh]">
+    <button onclick="startGame()" class="bg-[#e55865] z-30 text-[white] p-[0.5em] w-[fit-content] h-[fit-content] flex justify-center items-center fixed top-[2em] right-[2em] border border-[white] border-[2px]" id="start">Start</button>
+    <p class="inst text-[white] text-center w-[100%] h-[100vh] flex justify-center items-center pr-[3em] pl-[3em] fixed top-[2em]">Press "ENTER KEY" or "Start Button" to start and use arrow keys to control the dino</p>
     <h1 class="gameover hidden flex justify-center items-center fixed z-20 text-center w-[100%] top-[3em] text-[2em] text-[#e55865]">Game Over</h1>
     <h1 class="score text-[2em] w-[100%] text-left p-[1em] text-white">Score: 0</h1>
     <div>
         <div class="dino"></div>
-        <div class="rock animateRock"></div>
+        <div class="rock"></div>
     </div>
     <div class="buttons z-30 flex justify-center items-center gap-[1em] w-[fit-content] h-[fit-content] fixed bottom-[2em] right-[2em]">
         <button class="bg-[#e55865] text-[white] p-[0.5em] w-[3em] h-[3em] flex justify-center items-center border border-[white] border-[2px]" id="left"><i class="bi bi-arrow-left text-[1.5em]"></i></button>

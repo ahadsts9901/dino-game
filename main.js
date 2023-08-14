@@ -2,7 +2,11 @@ let score = 0;
 let cross = true;
 
 document.onkeydown = function(e) {
-    handleKeyPress(e.keyCode);
+    if (e.keyCode === 13) {
+        startGame();
+    } else {
+        handleKeyPress(e.keyCode);
+    }
 };
 
 document.getElementById("left").addEventListener("click", function() {
@@ -52,6 +56,13 @@ setInterval(() => {
     offsetY = Math.abs(dy - ry);
     if (offsetX < 60 && offsetY < 60) {
         gameOver = true;
+        if (gameOver) {
+            // console.log("Game Over");
+            rock.classList.remove("animateRock");
+            document.querySelector(".gameover").classList.remove("hidden");
+            return
+        }
+        return
     } else if (offsetX < 150 && cross) {
         score += 1;
         updateScore(score);
@@ -70,14 +81,17 @@ setInterval(() => {
             rock.style.animationDuration = newDur + 's';
         }, 500);
     }
-
-    if (gameOver) {
-        // console.log("Game Over");
-        rock.classList.remove("animateRock");
-        document.querySelector(".gameover").classList.remove("hidden");
-    }
 }, 100);
 
 function updateScore(score) {
     document.querySelector(".score").innerText = `Score: ${score}`;
+}
+
+function startGame() {
+    score = 0
+    updateScore(score);
+    document.querySelector(".rock").style.animationDuration = '3s';
+    document.querySelector(".rock").classList.add("animateRock");
+    document.querySelector(".gameover").classList.add('hidden');
+    document.querySelector(".inst").classList.add('hidden');
 }
